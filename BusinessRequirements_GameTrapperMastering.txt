@@ -1,0 +1,13 @@
+This file contains my requirements for the game "Trapper Mastering", and instructions for AI Copilot, 
+so you should never change this file directly.
+
+# Business Requirements for "Trapper Mastering"
+General Overview:
+    - A game similar to other games like Pokemon Blue, Red, and Yellow but instead of a county, it is a whole state sized area and use traps to help catch creatures.
+
+Game Play:
+
+
+
+# Technical Requirements
+
