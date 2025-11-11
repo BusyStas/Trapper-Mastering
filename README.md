@@ -118,3 +118,4 @@ This project is open source and available for educational purposes.
 ## Credits
 
 Inspired by Pokemon Blue, Red, and Yellow by Game Freak and Nintendo.
+A game similar to other games like Pokemon Blue, Red, and Yellow but instead of a county, it is a whole state sized area and use traps to help catch creatures. Berries can also be used to help trap creatures.
