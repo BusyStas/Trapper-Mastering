@@ -39,22 +39,39 @@ Game Play:
     - Shiny creatures will be able to be taken to a laboratory to get rewards which increase for each one given to the laboratory until the rewards are special creatures that cannot be found in the wild.
     - A rival NPC will battle you occasionally to test your strength to move on to another stage of the game, about 9 battles is enough.
     - An evil team will try to trap and ship creatures overseas and they need to be stopped by the player after many, many, battles.
-# Technical Requirements
-- The game will be developed using a cross-platform game engine (e.g., Unity or Unreal Engine).
-- The game will support both single-player and multiplayer modes.
-- The game will be optimized for performance on a variety of devices, including mobile and desktop.
-- The game will include a robust AI system for creature behavior and NPC interactions.
-- The game will feature a dynamic environment with day-night cycles and weather effects.
-- The game will include a comprehensive tutorial system to help new players learn the mechanics.
-- The game will have a user-friendly interface for inventory management, creature information, and trap customization.
-- The game will support regular updates and expansions to introduce new content and features.
-- The game will include analytics to track player behavior and improve gameplay experience.
-- The game will have localization support for multiple languages.
-- The game will include accessibility options to accommodate players with disabilities.
-- The game will have cloud save functionality to allow players to access their progress across different devices and have many save slots.
-- The game will implement anti-cheat measures to ensure fair play in multiplayer mode.
+
 # AI Copilot Instructions
-- Use the game design document as a reference for creating new content and features.
-- Follow the technical requirements and ensure compatibility with the game engine.
-- Prioritize player engagement and retention in all new features and updates.
-- Collaborate with the development team to implement AI-driven features and improvements.
+    - Use the game design document as a reference for creating new content and features.
+    - Follow the technical requirements and ensure compatibility with the game engine.
+    - Prioritize player engagement and retention in all new features and updates.
+    - Collaborate with the development team to implement AI-driven features and improvements.
+
+# Mile Stones
+    - Initial game concept and design document completed.
+    - Prototype development with basic trapping mechanics.
+    - Alpha version with core gameplay features implemented.
+    - Beta version with multiplayer mode and additional content.
+    - Final release with full features, bug fixes, and optimizations.
+    - Post-launch updates and expansions.
+
+# Feature Implementation:
+    - Create a yaml file with probabilities for creature spawns based on environment, time of day, and weather conditions.
+    - Create a yaml file with trap types, their effectiveness against different creature types, and upgrade paths.
+    - Create a yaml file with berry types, their effects on creatures, and availability in different locations.
+    - Create a yaml file with probabilities of capturing creatures based on trap type, creature behavior, and environmental factors.
+
+# Technical Requirements
+    - The game will be developed using a cross-platform game engine (e.g., Unity or Unreal Engine).
+    - The game will support both single-player and multiplayer modes.
+    - The game will be optimized for performance on a variety of devices, including mobile and desktop.
+    - The game will include a robust AI system for creature behavior and NPC interactions.
+    - The game will feature a dynamic environment with day-night cycles and weather effects.
+    - The game will include a comprehensive tutorial system to help new players learn the mechanics.
+    - The game will have a user-friendly interface for inventory management, creature information, and trap customization.
+    - The game will support regular updates and expansions to introduce new content and features.
+    - The game will include analytics to track player behavior and improve gameplay experience.
+    - The game will have localization support for multiple languages.
+    - The game will include accessibility options to accommodate players with disabilities.
+    - The game will have cloud save functionality to allow players to access their progress across different devices and have many save slots.
+    - The game will implement anti-cheat measures to ensure fair play in multiplayer mode.
+    

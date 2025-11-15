@@ -1,0 +1,542 @@
+# Trap Types and Effectiveness Configuration
+# Defines trap characteristics, effectiveness against creatures, and upgrade paths
+
+trap_types:
+  basic_net:
+    tier: 1
+    base_effectiveness: 0.35
+    cost: 10
+    durability: 5
+    reusable: false
+    description: "A simple net trap good for catching small creatures"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.5
+        small: 1.2
+        medium: 1.0
+        large: 0.6
+        huge: 0.3
+      creature_behavior:
+        docile: 1.3
+        neutral: 1.0
+        aggressive: 0.7
+        skittish: 1.1
+        territorial: 0.8
+      creature_type:
+        normal: 1.0
+        water: 0.8
+        flying: 1.2
+        ground: 1.0
+        fire: 0.9
+        ice: 0.9
+        electric: 0.8
+        psychic: 0.9
+        ghost: 0.6
+        dragon: 0.5
+    upgrade_path: "reinforced_net"
+  
+  reinforced_net:
+    tier: 2
+    base_effectiveness: 0.50
+    cost: 50
+    durability: 10
+    reusable: true
+    reuse_count: 3
+    description: "A stronger net with steel cables for medium creatures"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.4
+        small: 1.3
+        medium: 1.2
+        large: 0.9
+        huge: 0.5
+      creature_behavior:
+        docile: 1.3
+        neutral: 1.1
+        aggressive: 0.9
+        skittish: 1.2
+        territorial: 0.9
+      creature_type:
+        normal: 1.1
+        water: 0.9
+        flying: 1.3
+        ground: 1.1
+        fire: 1.0
+        ice: 1.0
+        electric: 0.9
+        psychic: 1.0
+        ghost: 0.7
+        dragon: 0.6
+    upgrade_path: "master_net"
+    required_level: 5
+  
+  master_net:
+    tier: 3
+    base_effectiveness: 0.70
+    cost: 200
+    durability: 20
+    reusable: true
+    reuse_count: 10
+    description: "The ultimate net trap with enchanted threads"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.3
+        small: 1.3
+        medium: 1.3
+        large: 1.2
+        huge: 0.8
+      creature_behavior:
+        docile: 1.4
+        neutral: 1.2
+        aggressive: 1.0
+        skittish: 1.3
+        territorial: 1.0
+      creature_type:
+        normal: 1.2
+        water: 1.0
+        flying: 1.4
+        ground: 1.2
+        fire: 1.1
+        ice: 1.1
+        electric: 1.0
+        psychic: 1.1
+        ghost: 0.8
+        dragon: 0.7
+    required_level: 15
+    special_ability: "increased_catch_on_rainy_days"
+  
+  pitfall_trap:
+    tier: 1
+    base_effectiveness: 0.40
+    cost: 25
+    durability: 3
+    reusable: false
+    description: "A hidden pit that captures ground-dwelling creatures"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 0.8
+        small: 1.0
+        medium: 1.3
+        large: 1.4
+        huge: 1.2
+      creature_behavior:
+        docile: 1.1
+        neutral: 1.2
+        aggressive: 1.3
+        skittish: 0.9
+        territorial: 1.4
+      creature_type:
+        normal: 1.2
+        water: 0.7
+        flying: 0.3
+        ground: 1.8
+        fire: 1.0
+        ice: 1.0
+        electric: 1.0
+        psychic: 0.8
+        ghost: 0.4
+        dragon: 1.1
+    upgrade_path: "spiked_pitfall"
+  
+  spiked_pitfall:
+    tier: 2
+    base_effectiveness: 0.60
+    cost: 100
+    durability: 5
+    reusable: true
+    reuse_count: 2
+    description: "An enhanced pitfall with retractable spikes for containment"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 0.7
+        small: 1.1
+        medium: 1.4
+        large: 1.5
+        huge: 1.4
+      creature_behavior:
+        docile: 1.2
+        neutral: 1.3
+        aggressive: 1.4
+        skittish: 1.0
+        territorial: 1.5
+      creature_type:
+        normal: 1.3
+        water: 0.8
+        flying: 0.4
+        ground: 2.0
+        fire: 1.1
+        ice: 1.1
+        electric: 1.1
+        psychic: 0.9
+        ghost: 0.5
+        dragon: 1.2
+    upgrade_path: "void_pitfall"
+    required_level: 8
+  
+  void_pitfall:
+    tier: 3
+    base_effectiveness: 0.80
+    cost: 300
+    durability: 10
+    reusable: true
+    reuse_count: 5
+    description: "A dimensional trap that captures creatures in a pocket space"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.0
+        small: 1.2
+        medium: 1.5
+        large: 1.6
+        huge: 1.5
+      creature_behavior:
+        docile: 1.3
+        neutral: 1.4
+        aggressive: 1.5
+        skittish: 1.1
+        territorial: 1.6
+      creature_type:
+        normal: 1.4
+        water: 1.0
+        flying: 0.6
+        ground: 2.2
+        fire: 1.2
+        ice: 1.2
+        electric: 1.2
+        psychic: 1.3
+        ghost: 1.5
+        dragon: 1.4
+    required_level: 20
+    special_ability: "works_against_ghost_types"
+  
+  cage_trap:
+    tier: 2
+    base_effectiveness: 0.55
+    cost: 75
+    durability: 8
+    reusable: true
+    reuse_count: 5
+    description: "A sturdy cage that springs shut when triggered"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.2
+        small: 1.3
+        medium: 1.2
+        large: 1.0
+        huge: 0.7
+      creature_behavior:
+        docile: 1.3
+        neutral: 1.2
+        aggressive: 1.0
+        skittish: 1.1
+        territorial: 1.1
+      creature_type:
+        normal: 1.2
+        water: 1.0
+        flying: 0.9
+        ground: 1.3
+        fire: 0.8
+        ice: 1.1
+        electric: 0.9
+        psychic: 1.0
+        ghost: 0.7
+        dragon: 0.9
+    upgrade_path: "electro_cage"
+    required_level: 6
+  
+  electro_cage:
+    tier: 3
+    base_effectiveness: 0.75
+    cost: 250
+    durability: 15
+    reusable: true
+    reuse_count: 10
+    description: "An electrified cage that stuns and captures creatures"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.3
+        small: 1.4
+        medium: 1.3
+        large: 1.2
+        huge: 0.9
+      creature_behavior:
+        docile: 1.4
+        neutral: 1.3
+        aggressive: 1.2
+        skittish: 1.2
+        territorial: 1.2
+      creature_type:
+        normal: 1.3
+        water: 1.8
+        flying: 1.2
+        ground: 0.6
+        fire: 1.0
+        ice: 1.2
+        electric: 0.5
+        psychic: 1.1
+        ghost: 0.8
+        dragon: 1.1
+    required_level: 18
+    special_ability: "super_effective_against_water_flying"
+  
+  freeze_trap:
+    tier: 2
+    base_effectiveness: 0.50
+    cost: 90
+    durability: 6
+    reusable: true
+    reuse_count: 4
+    description: "Releases a freezing mist that immobilizes creatures"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.1
+        small: 1.2
+        medium: 1.2
+        large: 1.1
+        huge: 1.0
+      creature_behavior:
+        docile: 1.2
+        neutral: 1.1
+        aggressive: 1.3
+        skittish: 1.0
+        territorial: 1.2
+      creature_type:
+        normal: 1.1
+        water: 1.4
+        flying: 1.2
+        ground: 1.0
+        fire: 2.0
+        ice: 0.3
+        electric: 1.0
+        psychic: 1.0
+        ghost: 0.9
+        dragon: 1.3
+    upgrade_path: "absolute_zero_trap"
+    required_level: 10
+  
+  absolute_zero_trap:
+    tier: 3
+    base_effectiveness: 0.78
+    cost: 280
+    durability: 12
+    reusable: true
+    reuse_count: 8
+    description: "Creates an instant freeze zone at absolute zero temperature"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.2
+        small: 1.3
+        medium: 1.3
+        large: 1.2
+        huge: 1.1
+      creature_behavior:
+        docile: 1.3
+        neutral: 1.2
+        aggressive: 1.4
+        skittish: 1.1
+        territorial: 1.3
+      creature_type:
+        normal: 1.2
+        water: 1.6
+        flying: 1.3
+        ground: 1.1
+        fire: 2.5
+        ice: 0.2
+        electric: 1.1
+        psychic: 1.1
+        ghost: 1.0
+        dragon: 1.5
+    required_level: 22
+    special_ability: "bonus_in_cold_weather"
+  
+  flame_trap:
+    tier: 2
+    base_effectiveness: 0.48
+    cost: 85
+    durability: 7
+    reusable: true
+    reuse_count: 4
+    description: "Creates a ring of fire that herds creatures into containment"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.0
+        small: 1.1
+        medium: 1.2
+        large: 1.2
+        huge: 1.1
+      creature_behavior:
+        docile: 1.0
+        neutral: 1.1
+        aggressive: 1.2
+        skittish: 1.4
+        territorial: 1.1
+      creature_type:
+        normal: 1.1
+        water: 1.8
+        flying: 1.1
+        ground: 1.3
+        fire: 0.3
+        ice: 2.2
+        electric: 1.0
+        psychic: 1.0
+        ghost: 1.2
+        dragon: 0.8
+    upgrade_path: "inferno_trap"
+    required_level: 9
+  
+  inferno_trap:
+    tier: 3
+    base_effectiveness: 0.76
+    cost: 270
+    durability: 13
+    reusable: true
+    reuse_count: 8
+    description: "A legendary trap that summons volcanic flames"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.1
+        small: 1.2
+        medium: 1.3
+        large: 1.3
+        huge: 1.2
+      creature_behavior:
+        docile: 1.1
+        neutral: 1.2
+        aggressive: 1.3
+        skittish: 1.5
+        territorial: 1.2
+      creature_type:
+        normal: 1.2
+        water: 2.0
+        flying: 1.2
+        ground: 1.4
+        fire: 0.2
+        ice: 2.8
+        electric: 1.1
+        psychic: 1.1
+        ghost: 1.3
+        dragon: 0.9
+    required_level: 21
+    special_ability: "bonus_in_hot_weather"
+  
+  psychic_barrier:
+    tier: 3
+    base_effectiveness: 0.65
+    cost: 320
+    durability: 18
+    reusable: true
+    reuse_count: 12
+    description: "A mental trap that confuses and contains creatures"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.2
+        small: 1.2
+        medium: 1.2
+        large: 1.2
+        huge: 1.2
+      creature_behavior:
+        docile: 1.3
+        neutral: 1.2
+        aggressive: 1.1
+        skittish: 1.1
+        territorial: 1.0
+      creature_type:
+        normal: 1.1
+        water: 1.1
+        flying: 1.2
+        ground: 1.0
+        fire: 1.1
+        ice: 1.1
+        electric: 1.1
+        psychic: 0.5
+        ghost: 1.8
+        dragon: 1.3
+    required_level: 25
+    special_ability: "effective_against_intelligent_creatures"
+  
+  master_ball_trap:
+    tier: 4
+    base_effectiveness: 0.95
+    cost: 1000
+    durability: 1
+    reusable: false
+    description: "The ultimate trap with nearly guaranteed capture"
+    effectiveness_multipliers:
+      creature_size:
+        tiny: 1.0
+        small: 1.0
+        medium: 1.0
+        large: 1.0
+        huge: 1.0
+      creature_behavior:
+        docile: 1.0
+        neutral: 1.0
+        aggressive: 1.0
+        skittish: 1.0
+        territorial: 1.0
+      creature_type:
+        normal: 1.0
+        water: 1.0
+        flying: 1.0
+        ground: 1.0
+        fire: 1.0
+        ice: 1.0
+        electric: 1.0
+        psychic: 1.0
+        ghost: 1.0
+        dragon: 1.0
+    required_level: 30
+    special_ability: "works_on_legendaries"
+    obtain_method: "special_quest_reward"
+
+# Trap Materials and Crafting
+crafting_materials:
+  wood:
+    description: "Basic material for entry-level traps"
+    sources: ["forest", "plains"]
+    
+  steel:
+    description: "Durable material for reinforced traps"
+    sources: ["mountain", "caves", "mineshafts"]
+    
+  crystal:
+    description: "Magical material for advanced traps"
+    sources: ["crystal_caves", "floating_islands"]
+    
+  obsidian:
+    description: "Rare volcanic glass for special traps"
+    sources: ["volcano", "obsidian_wastes"]
+    
+  ice_shard:
+    description: "Frozen essence for freeze traps"
+    sources: ["glacier", "tundra"]
+    
+  magma_core:
+    description: "Molten core for flame traps"
+    sources: ["volcano", "lava_tubes"]
+    
+  psychic_essence:
+    description: "Mental energy for psychic barriers"
+    sources: ["special_events", "legendary_creatures"]
+
+# Trap Modifiers
+modifiers:
+  berry_bait:
+    effectiveness_bonus: 0.15
+    description: "Placing berries near trap increases effectiveness"
+    
+  weather_sync:
+    effectiveness_bonus: 0.10
+    description: "Using trap that matches current weather"
+    
+  time_bonus:
+    effectiveness_bonus: 0.08
+    description: "Using trap during creature's preferred time"
+    
+  combo_bonus:
+    effectiveness_bonus: 0.12
+    description: "Using multiple trap types in sequence"
+    
+  skill_mastery:
+    max_bonus: 0.25
+    description: "Bonus increases with trap usage experience"
+    levels: [0.05, 0.10, 0.15, 0.20, 0.25]

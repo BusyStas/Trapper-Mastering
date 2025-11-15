@@ -1,0 +1,477 @@
+# Creature Spawn Probabilities Configuration
+# Defines spawn rates based on environment, time of day, and weather conditions
+
+environments:
+  forest:
+    base_spawn_rate: 0.75
+    creatures:
+      - name: "Forest Sprite"
+        base_probability: 0.15
+        time_modifiers:
+          dawn: 1.5
+          day: 1.0
+          dusk: 1.3
+          night: 0.5
+        weather_modifiers:
+          sunny: 1.2
+          cloudy: 1.0
+          rainy: 0.8
+          stormy: 0.3
+          foggy: 1.1
+      
+      - name: "Timber Wolf"
+        base_probability: 0.12
+        time_modifiers:
+          dawn: 1.2
+          day: 0.7
+          dusk: 1.5
+          night: 1.8
+        weather_modifiers:
+          sunny: 1.0
+          cloudy: 1.1
+          rainy: 0.9
+          stormy: 0.6
+          foggy: 1.3
+      
+      - name: "Moss Turtle"
+        base_probability: 0.10
+        time_modifiers:
+          dawn: 1.0
+          day: 1.2
+          dusk: 1.0
+          night: 0.6
+        weather_modifiers:
+          sunny: 1.1
+          cloudy: 1.0
+          rainy: 1.4
+          stormy: 0.8
+          foggy: 1.0
+      
+      - name: "Gleaming Deer"
+        base_probability: 0.08
+        rarity: rare
+        time_modifiers:
+          dawn: 2.0
+          day: 0.5
+          dusk: 2.0
+          night: 0.3
+        weather_modifiers:
+          sunny: 1.5
+          cloudy: 1.0
+          rainy: 0.4
+          stormy: 0.2
+          foggy: 0.7
+
+  lake:
+    base_spawn_rate: 0.70
+    creatures:
+      - name: "Splash Frog"
+        base_probability: 0.20
+        time_modifiers:
+          dawn: 1.3
+          day: 1.1
+          dusk: 1.4
+          night: 1.0
+        weather_modifiers:
+          sunny: 1.0
+          cloudy: 1.1
+          rainy: 1.8
+          stormy: 1.2
+          foggy: 1.3
+      
+      - name: "Crystal Fish"
+        base_probability: 0.15
+        time_modifiers:
+          dawn: 1.2
+          day: 1.0
+          dusk: 1.1
+          night: 0.8
+        weather_modifiers:
+          sunny: 1.3
+          cloudy: 1.0
+          rainy: 0.9
+          stormy: 0.7
+          foggy: 0.8
+      
+      - name: "Water Serpent"
+        base_probability: 0.07
+        rarity: rare
+        time_modifiers:
+          dawn: 0.8
+          day: 0.6
+          dusk: 1.2
+          night: 1.5
+        weather_modifiers:
+          sunny: 0.8
+          cloudy: 1.0
+          rainy: 1.2
+          stormy: 1.8
+          foggy: 1.4
+
+  mountain:
+    base_spawn_rate: 0.65
+    creatures:
+      - name: "Rocky Golem"
+        base_probability: 0.14
+        time_modifiers:
+          dawn: 1.0
+          day: 1.2
+          dusk: 1.0
+          night: 0.8
+        weather_modifiers:
+          sunny: 1.1
+          cloudy: 1.0
+          rainy: 0.9
+          stormy: 1.3
+          foggy: 0.7
+      
+      - name: "Sky Eagle"
+        base_probability: 0.11
+        time_modifiers:
+          dawn: 1.8
+          day: 1.3
+          dusk: 1.6
+          night: 0.4
+        weather_modifiers:
+          sunny: 1.5
+          cloudy: 1.2
+          rainy: 0.5
+          stormy: 0.2
+          foggy: 0.3
+      
+      - name: "Thunder Ram"
+        base_probability: 0.06
+        rarity: rare
+        time_modifiers:
+          dawn: 1.1
+          day: 1.0
+          dusk: 1.1
+          night: 0.9
+        weather_modifiers:
+          sunny: 0.7
+          cloudy: 1.0
+          rainy: 1.2
+          stormy: 2.5
+          foggy: 0.9
+
+  desert:
+    base_spawn_rate: 0.60
+    creatures:
+      - name: "Sand Scorpion"
+        base_probability: 0.18
+        time_modifiers:
+          dawn: 1.2
+          day: 0.8
+          dusk: 1.3
+          night: 1.5
+        weather_modifiers:
+          sunny: 1.3
+          cloudy: 1.0
+          rainy: 0.3
+          sandstorm: 1.8
+          clear: 1.1
+      
+      - name: "Cactus Sprite"
+        base_probability: 0.13
+        time_modifiers:
+          dawn: 1.0
+          day: 1.2
+          dusk: 1.0
+          night: 0.7
+        weather_modifiers:
+          sunny: 1.4
+          cloudy: 1.0
+          rainy: 0.5
+          sandstorm: 0.4
+          clear: 1.2
+      
+      - name: "Mirage Phoenix"
+        base_probability: 0.04
+        rarity: legendary
+        time_modifiers:
+          dawn: 0.5
+          day: 2.0
+          dusk: 1.5
+          night: 0.2
+        weather_modifiers:
+          sunny: 2.5
+          cloudy: 0.8
+          rainy: 0.1
+          sandstorm: 0.3
+          clear: 1.8
+
+  ocean:
+    base_spawn_rate: 0.80
+    creatures:
+      - name: "Coral Crab"
+        base_probability: 0.22
+        time_modifiers:
+          dawn: 1.1
+          day: 1.0
+          dusk: 1.2
+          night: 1.0
+        weather_modifiers:
+          sunny: 1.2
+          cloudy: 1.0
+          rainy: 1.1
+          stormy: 1.5
+          foggy: 1.0
+      
+      - name: "Tide Dolphin"
+        base_probability: 0.16
+        time_modifiers:
+          dawn: 1.4
+          day: 1.3
+          dusk: 1.2
+          night: 0.6
+        weather_modifiers:
+          sunny: 1.3
+          cloudy: 1.0
+          rainy: 0.9
+          stormy: 0.5
+          foggy: 0.8
+      
+      - name: "Leviathan"
+        base_probability: 0.03
+        rarity: legendary
+        time_modifiers:
+          dawn: 0.8
+          day: 0.6
+          dusk: 1.0
+          night: 1.8
+        weather_modifiers:
+          sunny: 0.5
+          cloudy: 1.0
+          rainy: 1.3
+          stormy: 2.5
+          foggy: 1.2
+
+  volcano:
+    base_spawn_rate: 0.55
+    creatures:
+      - name: "Lava Lizard"
+        base_probability: 0.17
+        time_modifiers:
+          dawn: 1.0
+          day: 1.1
+          dusk: 1.0
+          night: 1.2
+        weather_modifiers:
+          sunny: 1.2
+          cloudy: 1.0
+          rainy: 0.6
+          ash_fall: 1.5
+          clear: 1.1
+      
+      - name: "Magma Elemental"
+        base_probability: 0.12
+        time_modifiers:
+          dawn: 1.1
+          day: 1.2
+          dusk: 1.1
+          night: 1.3
+        weather_modifiers:
+          sunny: 1.3
+          cloudy: 1.0
+          rainy: 0.4
+          ash_fall: 1.8
+          clear: 1.1
+      
+      - name: "Inferno Dragon"
+        base_probability: 0.05
+        rarity: legendary
+        time_modifiers:
+          dawn: 0.7
+          day: 1.0
+          dusk: 1.5
+          night: 1.8
+        weather_modifiers:
+          sunny: 1.5
+          cloudy: 1.0
+          rainy: 0.2
+          ash_fall: 2.0
+          clear: 1.3
+
+  glacier:
+    base_spawn_rate: 0.58
+    creatures:
+      - name: "Frost Rabbit"
+        base_probability: 0.19
+        time_modifiers:
+          dawn: 1.2
+          day: 1.0
+          dusk: 1.1
+          night: 1.3
+        weather_modifiers:
+          sunny: 0.9
+          cloudy: 1.0
+          snowy: 1.8
+          blizzard: 1.4
+          clear: 1.1
+      
+      - name: "Ice Bear"
+        base_probability: 0.13
+        time_modifiers:
+          dawn: 1.3
+          day: 1.1
+          dusk: 1.2
+          night: 1.4
+        weather_modifiers:
+          sunny: 0.8
+          cloudy: 1.0
+          snowy: 1.5
+          blizzard: 1.2
+          clear: 1.0
+      
+      - name: "Aurora Wyrm"
+        base_probability: 0.04
+        rarity: legendary
+        time_modifiers:
+          dawn: 1.5
+          day: 0.5
+          dusk: 2.0
+          night: 2.5
+        weather_modifiers:
+          sunny: 0.4
+          cloudy: 1.0
+          snowy: 1.3
+          blizzard: 0.8
+          aurora: 3.0
+
+  crystal_caves:
+    base_spawn_rate: 0.50
+    creatures:
+      - name: "Gem Bat"
+        base_probability: 0.16
+        time_modifiers:
+          dawn: 0.8
+          day: 0.6
+          dusk: 1.2
+          night: 1.8
+        weather_modifiers:
+          any: 1.0  # Weather doesn't affect cave spawns much
+      
+      - name: "Crystal Golem"
+        base_probability: 0.10
+        time_modifiers:
+          dawn: 1.0
+          day: 1.0
+          dusk: 1.0
+          night: 1.0
+        weather_modifiers:
+          any: 1.0
+      
+      - name: "Prism Dragon"
+        base_probability: 0.03
+        rarity: legendary
+        time_modifiers:
+          dawn: 1.2
+          day: 1.0
+          dusk: 1.2
+          night: 1.5
+        weather_modifiers:
+          any: 1.0
+
+  floating_islands:
+    base_spawn_rate: 0.45
+    creatures:
+      - name: "Cloud Sheep"
+        base_probability: 0.14
+        time_modifiers:
+          dawn: 1.5
+          day: 1.2
+          dusk: 1.3
+          night: 0.6
+        weather_modifiers:
+          sunny: 1.3
+          cloudy: 1.8
+          rainy: 0.7
+          stormy: 0.4
+          foggy: 1.5
+      
+      - name: "Wind Spirit"
+        base_probability: 0.11
+        time_modifiers:
+          dawn: 1.3
+          day: 1.1
+          dusk: 1.4
+          night: 0.8
+        weather_modifiers:
+          sunny: 1.0
+          cloudy: 1.2
+          rainy: 1.1
+          stormy: 2.0
+          foggy: 1.3
+      
+      - name: "Sky Serpent"
+        base_probability: 0.05
+        rarity: legendary
+        time_modifiers:
+          dawn: 1.8
+          day: 1.0
+          dusk: 1.9
+          night: 1.2
+        weather_modifiers:
+          sunny: 1.2
+          cloudy: 1.5
+          rainy: 0.8
+          stormy: 2.5
+          foggy: 1.0
+
+# Special Event Spawns
+special_events:
+  blood_moon:
+    global_modifier: 2.0
+    exclusive_creatures:
+      - name: "Shadow Beast"
+        probability: 0.08
+        environments: ["forest", "mountain", "desert"]
+      
+      - name: "Crimson Phantom"
+        probability: 0.05
+        environments: ["all"]
+  
+  meteor_shower:
+    global_modifier: 1.5
+    exclusive_creatures:
+      - name: "Star Fragment"
+        probability: 0.10
+        environments: ["plains", "desert", "floating_islands"]
+      
+      - name: "Cosmic Wisp"
+        probability: 0.06
+        environments: ["all"]
+  
+  solar_eclipse:
+    global_modifier: 1.8
+    exclusive_creatures:
+      - name: "Eclipse Owl"
+        probability: 0.07
+        environments: ["forest", "mountain", "floating_islands"]
+      
+      - name: "Dark Phoenix"
+        probability: 0.04
+        environments: ["volcano", "desert", "obsidian_wastes"]
+
+# Shiny Variant Settings
+shiny_variants:
+  base_probability: 0.001  # 1 in 1000 chance
+  modifiers:
+    with_shiny_charm: 3.0  # Triple chance with charm
+    during_events: 2.0  # Double during special events
+    chain_bonus_per_catch: 0.0001  # Increases slightly with consecutive catches
+
+# Time of Day Definitions
+time_periods:
+  dawn: 
+    start_hour: 5
+    end_hour: 7
+  day:
+    start_hour: 7
+    end_hour: 17
+  dusk:
+    start_hour: 17
+    end_hour: 19
+  night:
+    start_hour: 19
+    end_hour: 5

@@ -1,0 +1,372 @@
+# Capture Probability Configuration
+# Calculates capture success based on trap type, creature behavior, environmental factors, and player actions
+
+# Base Capture Formula:
+# final_probability = base_trap_effectiveness × creature_modifier × behavior_modifier × environmental_modifier × bonus_modifiers
+
+creature_modifiers:
+  by_rarity:
+    common: 1.0
+    uncommon: 0.85
+    rare: 0.65
+    very_rare: 0.45
+    legendary: 0.25
+    mythical: 0.10
+  
+  by_size:
+    tiny: 1.15
+    small: 1.05
+    medium: 1.0
+    large: 0.90
+    huge: 0.75
+    colossal: 0.60
+  
+  by_health_status:
+    full_health: 0.70
+    weakened_75: 0.85
+    weakened_50: 1.0
+    weakened_25: 1.3
+    critical_health: 1.6
+  
+  by_status_condition:
+    none: 1.0
+    asleep: 2.0
+    paralyzed: 1.8
+    frozen: 1.9
+    poisoned: 1.2
+    burned: 1.2
+    confused: 1.4
+    frightened: 1.5
+
+behavior_modifiers:
+  docile:
+    base_modifier: 1.30
+    flee_chance: 0.05
+    break_free_attempts: 1
+    berry_effectiveness: 1.5
+    
+  neutral:
+    base_modifier: 1.0
+    flee_chance: 0.15
+    break_free_attempts: 2
+    berry_effectiveness: 1.2
+    
+  aggressive:
+    base_modifier: 0.75
+    flee_chance: 0.10
+    break_free_attempts: 4
+    berry_effectiveness: 0.9
+    damage_to_trap_chance: 0.30
+    
+  skittish:
+    base_modifier: 0.85
+    flee_chance: 0.45
+    break_free_attempts: 3
+    berry_effectiveness: 1.4
+    detection_range_multiplier: 1.8
+    
+  territorial:
+    base_modifier: 0.70
+    flee_chance: 0.05
+    break_free_attempts: 5
+    berry_effectiveness: 0.8
+    damage_to_trap_chance: 0.40
+    defend_territory_chance: 0.60
+
+environmental_modifiers:
+  time_of_day:
+    dawn:
+      base_modifier: 1.1
+      creature_specific:
+        nocturnal: 1.3
+        diurnal: 0.9
+        
+    day:
+      base_modifier: 1.0
+      creature_specific:
+        nocturnal: 0.7
+        diurnal: 1.4
+        
+    dusk:
+      base_modifier: 1.15
+      creature_specific:
+        nocturnal: 1.4
+        diurnal: 1.0
+        crepuscular: 1.6
+        
+    night:
+      base_modifier: 0.95
+      creature_specific:
+        nocturnal: 1.6
+        diurnal: 0.5
+  
+  weather_conditions:
+    sunny:
+      base_modifier: 1.0
+      trap_specific:
+        flame_trap: 1.2
+        freeze_trap: 0.8
+      
+    rainy:
+      base_modifier: 1.05
+      trap_specific:
+        electro_cage: 1.4
+        flame_trap: 0.6
+        basic_net: 1.2
+      
+    stormy:
+      base_modifier: 0.90
+      trap_specific:
+        electro_cage: 1.6
+        pitfall_trap: 0.7
+      difficulty_increase: 0.15
+      
+    snowy:
+      base_modifier: 0.95
+      trap_specific:
+        freeze_trap: 1.5
+        flame_trap: 0.7
+      
+    foggy:
+      base_modifier: 0.85
+      detection_difficulty: 1.3
+      creature_advantage: 0.15
+      
+    clear_night:
+      base_modifier: 1.1
+      shiny_bonus: 1.2
+  
+  habitat_match:
+    perfect_match: 1.25
+    good_match: 1.10
+    neutral: 1.0
+    poor_match: 0.85
+    terrible_match: 0.65
+
+player_skill_modifiers:
+  trapper_level:
+    level_1_5: 1.0
+    level_6_10: 1.05
+    level_11_15: 1.12
+    level_16_20: 1.20
+    level_21_25: 1.30
+    level_26_30: 1.45
+    level_31_plus: 1.60
+  
+  specialization_bonuses:
+    net_master:
+      net_trap_bonus: 0.25
+      description: "Mastery with net-type traps"
+      
+    pit_expert:
+      pitfall_bonus: 0.30
+      description: "Expert at creating and using pitfall traps"
+      
+    elemental_trapper:
+      elemental_trap_bonus: 0.20
+      description: "Bonus with fire, ice, and electric traps"
+      
+    beast_whisperer:
+      all_creatures_bonus: 0.15
+      berry_effectiveness: 1.3
+      description: "Natural affinity with all creatures"
+      
+    legendary_hunter:
+      rare_creature_bonus: 0.35
+      legendary_bonus: 0.50
+      description: "Specializes in capturing rare and legendary creatures"
+  
+  combo_multipliers:
+    first_throw: 1.0
+    consecutive_success_2: 1.05
+    consecutive_success_3: 1.10
+    consecutive_success_5: 1.20
+    consecutive_success_10: 1.35
+    
+    same_species_chain:
+      chain_5: 1.15
+      chain_10: 1.25
+      chain_25: 1.40
+      chain_50: 1.60
+      shiny_boost_at_50: 3.0
+
+special_modifiers:
+  critical_capture:
+    base_chance: 0.05
+    effects:
+      - "skip_shake_checks"
+      - "instant_success"
+    boosted_by:
+      high_level: 0.02
+      lucky_charm: 0.05
+      full_encyclopedia: 0.03
+  
+  berry_effects:
+    oran_berry:
+      calm_boost: 0.25
+      works_best_with: ["skittish", "aggressive"]
+      
+    razz_berry:
+      attract_boost: 0.15
+      increased_encounter: true
+      
+    nanab_berry:
+      movement_reduction: 0.40
+      works_best_with: ["aggressive", "territorial"]
+      
+    golden_razz:
+      capture_boost: 0.50
+      works_on_legendaries: true
+      
+    sitrus_berry:
+      trust_boost: 0.35
+      multiple_use_stacking: true
+  
+  charm_items:
+    shiny_charm:
+      shiny_rate_multiplier: 3.0
+      obtained_from: "complete_encyclopedia"
+      
+    lucky_charm:
+      critical_capture_bonus: 0.10
+      general_luck_boost: 0.08
+      
+    master_charm:
+      all_captures_bonus: 0.15
+      trap_durability_bonus: 0.20
+      
+    legendary_lure:
+      legendary_spawn_boost: 2.0
+      legendary_capture_boost: 0.25
+      duration_hours: 24
+      consumable: true
+  
+  time_based_bonuses:
+    creature_feeding_time:
+      multiplier: 1.30
+      description: "Creature is eating and distracted"
+      
+    creature_sleeping:
+      multiplier: 2.50
+      description: "Creature is asleep, much easier to capture"
+      
+    creature_mating_season:
+      multiplier: 1.20
+      spawn_rate_boost: 1.8
+      description: "More creatures appear and are less cautious"
+      
+    migration_period:
+      multiplier: 1.15
+      new_species_available: true
+      description: "Creatures passing through area"
+
+capture_mechanics:
+  shake_checks:
+    number_of_shakes: 3
+    shake_formula: "random(0-65535) < capture_value × shake_modifier"
+    
+    break_free_modifiers:
+      shake_1: 1.0
+      shake_2: 0.95
+      shake_3: 0.90
+    
+    success_indicators:
+      all_shakes_passed: "capture_successful"
+      any_shake_failed: "creature_breaks_free"
+  
+  flee_mechanics:
+    base_flee_rate: 0.10
+    
+    flee_triggers:
+      failed_capture: 0.15
+      low_trap_quality: 0.20
+      wrong_environment: 0.25
+      player_detected_early: 0.35
+      creature_injured_by_trap: 0.30
+    
+    flee_prevention:
+      berry_calming: -0.15
+      proper_bait: -0.20
+      stealth_approach: -0.25
+      sleep_status: -0.90
+  
+  retry_mechanics:
+    attempt_1: 1.0
+    attempt_2: 0.95
+    attempt_3: 0.90
+    attempt_4_plus: 0.85
+    
+    creature_becomes_wary: true
+    increased_flee_chance_per_attempt: 0.08
+
+advanced_calculations:
+  final_capture_probability:
+    formula: |
+      base_trap_effectiveness
+      × creature_rarity_modifier
+      × creature_size_modifier
+      × creature_health_modifier
+      × behavior_modifier
+      × time_of_day_modifier
+      × weather_modifier
+      × habitat_match_modifier
+      × player_level_modifier
+      × specialization_bonus
+      × berry_bonus
+      × charm_bonus
+      × time_based_bonus
+      × combo_multiplier
+    
+    min_probability: 0.01
+    max_probability: 0.99  # Never guaranteed except Master Ball
+    
+  critical_capture_probability:
+    formula: |
+      0.05 + (player_level × 0.001) + lucky_charm_bonus + encyclopedia_bonus
+    
+    max_critical_chance: 0.25
+  
+  legendary_capture_special_rules:
+    base_capture_rate: 0.03
+    requires_special_quest: true
+    multiple_attempts_allowed: false
+    
+    modifiers:
+      master_ball_trap: 0.95
+      golden_razz_berry: +0.15
+      legendary_charm: +0.10
+      perfect_conditions: +0.12
+      
+    failure_consequences:
+      creature_flees: true
+      must_trigger_encounter_again: true
+      cooldown_hours: 168  # 1 week
+
+difficulty_settings:
+  easy_mode:
+    global_capture_multiplier: 1.50
+    flee_rate_reduction: 0.50
+    
+  normal_mode:
+    global_capture_multiplier: 1.0
+    flee_rate_reduction: 0.0
+    
+  hard_mode:
+    global_capture_multiplier: 0.75
+    flee_rate_increase: 0.25
+    
+  expert_mode:
+    global_capture_multiplier: 0.50
+    flee_rate_increase: 0.50
+    legendary_encounter_rate: 0.50
+    shiny_rate_bonus: 1.5
+
+achievements_bonuses:
+  first_capture: 1.0
+  capture_50_creatures: 1.05
+  capture_100_creatures: 1.10
+  capture_500_creatures: 1.20
+  capture_all_common: 1.15
+  capture_all_rare: 1.25
+  capture_all_legendary: 1.50
+  perfect_encyclopedia: 1.60

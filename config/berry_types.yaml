@@ -1,0 +1,468 @@
+# Berry Types and Effects Configuration
+# Defines berry characteristics, effects on creatures, and availability
+
+berries:
+  oran_berry:
+    tier: common
+    base_cost: 5
+    description: "A sweet berry that calms nervous creatures"
+    effects:
+      calm_creature: 0.25
+      attract_radius: 10
+      duration_minutes: 5
+    creature_preferences:
+      docile: 1.5
+      neutral: 1.2
+      aggressive: 0.8
+      skittish: 1.8
+      territorial: 0.7
+    availability:
+      environments: ["forest", "plains", "lake"]
+      seasons: ["spring", "summer", "fall"]
+      rarity: 0.70
+    growth_time_hours: 24
+    can_plant: true
+  
+  razz_berry:
+    tier: common
+    base_cost: 8
+    description: "A tart berry that attracts creatures from farther away"
+    effects:
+      attract_radius: 25
+      duration_minutes: 10
+      spawn_rate_boost: 0.30
+    creature_preferences:
+      docile: 1.3
+      neutral: 1.4
+      aggressive: 1.1
+      skittish: 1.2
+      territorial: 1.3
+    availability:
+      environments: ["forest", "plains", "swamp"]
+      seasons: ["spring", "summer"]
+      rarity: 0.65
+    growth_time_hours: 36
+    can_plant: true
+  
+  pinap_berry:
+    tier: uncommon
+    base_cost: 15
+    description: "Doubles rewards when used successfully in capture"
+    effects:
+      reward_multiplier: 2.0
+      attract_radius: 12
+      duration_minutes: 8
+    creature_preferences:
+      docile: 1.4
+      neutral: 1.3
+      aggressive: 1.0
+      skittish: 1.3
+      territorial: 1.1
+    availability:
+      environments: ["forest", "jungle", "plains"]
+      seasons: ["summer", "fall"]
+      rarity: 0.45
+    growth_time_hours: 48
+    can_plant: true
+    special_effect: "double_points_and_items"
+  
+  nanab_berry:
+    tier: common
+    base_cost: 7
+    description: "Slows down aggressive creatures making them easier to trap"
+    effects:
+      slow_creature: 0.40
+      calm_creature: 0.15
+      duration_minutes: 7
+    creature_preferences:
+      docile: 1.1
+      neutral: 1.2
+      aggressive: 2.0
+      skittish: 1.0
+      territorial: 1.8
+    availability:
+      environments: ["plains", "desert", "savanna"]
+      seasons: ["all"]
+      rarity: 0.60
+    growth_time_hours: 30
+    can_plant: true
+  
+  sitrus_berry:
+    tier: uncommon
+    base_cost: 20
+    description: "A healing berry that makes creatures trust you more"
+    effects:
+      heal_creature: 0.50
+      trust_increase: 0.35
+      attract_radius: 15
+      duration_minutes: 12
+    creature_preferences:
+      docile: 1.8
+      neutral: 1.5
+      aggressive: 1.2
+      skittish: 1.6
+      territorial: 1.3
+    availability:
+      environments: ["forest", "jungle", "plains", "lake"]
+      seasons: ["summer", "fall"]
+      rarity: 0.40
+    growth_time_hours: 60
+    can_plant: true
+  
+  golden_razz_berry:
+    tier: rare
+    base_cost: 50
+    description: "A legendary berry that greatly increases catch rate"
+    effects:
+      catch_rate_bonus: 0.50
+      attract_radius: 30
+      spawn_rate_boost: 0.60
+      duration_minutes: 15
+    creature_preferences:
+      docile: 2.0
+      neutral: 1.8
+      aggressive: 1.5
+      skittish: 1.9
+      territorial: 1.6
+    availability:
+      environments: ["forest", "floating_islands", "crystal_caves"]
+      seasons: ["all"]
+      rarity: 0.15
+      special_conditions: ["full_moon", "rainbow_weather"]
+    growth_time_hours: 120
+    can_plant: true
+    special_effect: "works_on_rare_creatures"
+  
+  silver_pinap_berry:
+    tier: rare
+    base_cost: 45
+    description: "Triples rewards and slightly increases catch rate"
+    effects:
+      reward_multiplier: 3.0
+      catch_rate_bonus: 0.25
+      attract_radius: 18
+      duration_minutes: 10
+    creature_preferences:
+      docile: 1.6
+      neutral: 1.5
+      aggressive: 1.2
+      skittish: 1.5
+      territorial: 1.3
+    availability:
+      environments: ["mountain", "glacier", "floating_islands"]
+      seasons: ["winter", "spring"]
+      rarity: 0.20
+    growth_time_hours: 96
+    can_plant: true
+    special_effect: "triple_rewards"
+  
+  bluk_berry:
+    tier: common
+    base_cost: 6
+    description: "Attracts water-type creatures specifically"
+    effects:
+      attract_radius: 20
+      type_specific_bonus: 
+        water: 2.0
+        ice: 1.5
+      duration_minutes: 8
+    creature_preferences:
+      docile: 1.3
+      neutral: 1.2
+      aggressive: 1.0
+      skittish: 1.4
+      territorial: 1.1
+    availability:
+      environments: ["lake", "ocean", "river", "swamp"]
+      seasons: ["spring", "summer", "fall"]
+      rarity: 0.55
+    growth_time_hours: 28
+    can_plant: true
+  
+  figy_berry:
+    tier: uncommon
+    base_cost: 12
+    description: "Attracts fire-type creatures with its spicy flavor"
+    effects:
+      attract_radius: 22
+      type_specific_bonus:
+        fire: 2.2
+        dragon: 1.6
+      duration_minutes: 10
+    creature_preferences:
+      docile: 1.2
+      neutral: 1.3
+      aggressive: 1.7
+      skittish: 1.0
+      territorial: 1.6
+    availability:
+      environments: ["volcano", "desert", "lava_tubes"]
+      seasons: ["summer", "fall"]
+      rarity: 0.35
+    growth_time_hours: 42
+    can_plant: true
+  
+  wiki_berry:
+    tier: uncommon
+    base_cost: 13
+    description: "Attracts psychic and ghost-type creatures"
+    effects:
+      attract_radius: 18
+      type_specific_bonus:
+        psychic: 2.1
+        ghost: 2.0
+      duration_minutes: 12
+    creature_preferences:
+      docile: 1.4
+      neutral: 1.5
+      aggressive: 1.2
+      skittish: 1.7
+      territorial: 1.1
+    availability:
+      environments: ["crystal_caves", "floating_islands", "ancient_ruins"]
+      seasons: ["all"]
+      rarity: 0.30
+      special_conditions: ["night_time"]
+    growth_time_hours: 54
+    can_plant: true
+  
+  mago_berry:
+    tier: uncommon
+    base_cost: 14
+    description: "Restores energy and attracts flying creatures"
+    effects:
+      attract_radius: 25
+      type_specific_bonus:
+        flying: 2.3
+        dragon: 1.4
+      energy_restore: 0.30
+      duration_minutes: 9
+    creature_preferences:
+      docile: 1.5
+      neutral: 1.4
+      aggressive: 1.1
+      skittish: 1.8
+      territorial: 1.0
+    availability:
+      environments: ["mountain", "floating_islands", "cliffs"]
+      seasons: ["spring", "summer"]
+      rarity: 0.38
+    growth_time_hours: 45
+    can_plant: true
+  
+  aguav_berry:
+    tier: uncommon
+    base_cost: 11
+    description: "Calms territorial creatures and reduces aggression"
+    effects:
+      calm_creature: 0.45
+      aggression_reduction: 0.50
+      attract_radius: 14
+      duration_minutes: 15
+    creature_preferences:
+      docile: 1.3
+      neutral: 1.4
+      aggressive: 1.9
+      skittish: 1.2
+      territorial: 2.2
+    availability:
+      environments: ["plains", "savanna", "badlands"]
+      seasons: ["summer", "fall"]
+      rarity: 0.42
+    growth_time_hours: 40
+    can_plant: true
+  
+  leppa_berry:
+    tier: rare
+    base_cost: 35
+    description: "Revitalizes creatures and increases shiny encounter rate"
+    effects:
+      revitalize: 0.60
+      shiny_rate_boost: 2.0
+      attract_radius: 20
+      duration_minutes: 20
+    creature_preferences:
+      docile: 1.7
+      neutral: 1.6
+      aggressive: 1.4
+      skittish: 1.7
+      territorial: 1.5
+    availability:
+      environments: ["forest", "jungle", "floating_islands"]
+      seasons: ["spring"]
+      rarity: 0.18
+      special_conditions: ["dawn", "rainbow_weather"]
+    growth_time_hours: 84
+    can_plant: true
+    special_effect: "shiny_boost"
+  
+  lum_berry:
+    tier: rare
+    base_cost: 40
+    description: "Cures status effects and attracts legendary creatures"
+    effects:
+      cure_status: true
+      legendary_attract_bonus: 1.8
+      attract_radius: 35
+      duration_minutes: 25
+    creature_preferences:
+      docile: 1.8
+      neutral: 1.7
+      aggressive: 1.6
+      skittish: 1.8
+      territorial: 1.7
+    availability:
+      environments: ["crystal_caves", "floating_islands", "sacred_grove"]
+      seasons: ["all"]
+      rarity: 0.12
+      special_conditions: ["full_moon", "solar_eclipse", "aurora"]
+    growth_time_hours: 144
+    can_plant: true
+    special_effect: "legendary_attraction"
+  
+  pomeg_berry:
+    tier: common
+    base_cost: 9
+    description: "Makes creatures more friendly and easier to approach"
+    effects:
+      friendship_increase: 0.40
+      approach_ease: 0.35
+      attract_radius: 16
+      duration_minutes: 10
+    creature_preferences:
+      docile: 2.0
+      neutral: 1.5
+      aggressive: 0.9
+      skittish: 1.6
+      territorial: 1.0
+    availability:
+      environments: ["forest", "plains", "gardens"]
+      seasons: ["spring", "summer"]
+      rarity: 0.58
+    growth_time_hours: 32
+    can_plant: true
+  
+  enigma_berry:
+    tier: legendary
+    base_cost: 100
+    description: "A mysterious berry with random powerful effects"
+    effects:
+      random_effect: true
+      possible_effects:
+        - "massive_catch_boost: 0.80"
+        - "legendary_summon: 0.30"
+        - "shiny_guarantee: 0.05"
+        - "reward_x5: 0.20"
+        - "instant_capture: 0.10"
+      attract_radius: 50
+      duration_minutes: 30
+    creature_preferences:
+      docile: 2.5
+      neutral: 2.5
+      aggressive: 2.5
+      skittish: 2.5
+      territorial: 2.5
+    availability:
+      environments: ["all"]
+      seasons: ["all"]
+      rarity: 0.02
+      special_conditions: ["meteor_shower", "blood_moon", "solar_eclipse"]
+    growth_time_hours: 336  # 2 weeks
+    can_plant: false
+    special_effect: "mystery_effect"
+    obtain_method: "extremely_rare_drop"
+
+# Berry Combos
+berry_combinations:
+  sweet_combo:
+    berries: ["oran_berry", "sitrus_berry", "pomeg_berry"]
+    bonus_effect: "extra_calm_and_trust"
+    effectiveness_multiplier: 1.35
+    
+  spicy_combo:
+    berries: ["figy_berry", "razz_berry"]
+    bonus_effect: "fire_type_magnet"
+    effectiveness_multiplier: 1.45
+    
+  rare_hunter:
+    berries: ["golden_razz_berry", "lum_berry", "leppa_berry"]
+    bonus_effect: "legendary_and_shiny_attraction"
+    effectiveness_multiplier: 2.0
+    
+  reward_master:
+    berries: ["pinap_berry", "silver_pinap_berry"]
+    bonus_effect: "maximum_rewards"
+    effectiveness_multiplier: 1.25
+
+# Berry Farming
+farming:
+  soil_types:
+    basic_soil:
+      growth_multiplier: 1.0
+      yield: 1-3
+      
+    rich_soil:
+      growth_multiplier: 0.8
+      yield: 3-6
+      
+    miracle_soil:
+      growth_multiplier: 0.6
+      yield: 5-10
+      requires: "special_fertilizer"
+  
+  watering:
+    frequency_hours: 12
+    bonus_growth: 0.15
+    
+  fertilizers:
+    basic_fertilizer:
+      cost: 20
+      growth_boost: 0.20
+      
+    super_fertilizer:
+      cost: 75
+      growth_boost: 0.40
+      quality_boost: 0.25
+      
+    miracle_fertilizer:
+      cost: 200
+      growth_boost: 0.60
+      quality_boost: 0.50
+      rare_mutation_chance: 0.10
+
+# Berry Mutations
+mutations:
+  oran_x_sitrus:
+    result: "leppa_berry"
+    chance: 0.15
+    
+  razz_x_bluk:
+    result: "nanab_berry"
+    chance: 0.20
+    
+  pinap_x_razz:
+    result: "silver_pinap_berry"
+    chance: 0.08
+    
+  golden_razz_x_lum:
+    result: "enigma_berry"
+    chance: 0.01
+    requires: "miracle_soil"
+
+# Special Berry Events
+events:
+  berry_festival:
+    duration_days: 7
+    effects:
+      - "all_berry_growth_time_halved"
+      - "double_berry_yields"
+      - "increased_mutation_rates"
+    frequency: "seasonal"
+    
+  harvest_moon:
+    duration_days: 3
+    effects:
+      - "guaranteed_rare_berries"
+      - "triple_farming_yields"
+      - "free_miracle_fertilizer"
+    frequency: "annual"
