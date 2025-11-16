@@ -16,6 +16,7 @@ class CreatureType:
     ROCK = "Rock"
     GROUND = "Ground"
     FLYING = "Flying"
+    ANCIENT = "Ancient"
 
 
 # Type effectiveness chart (attacker -> defender -> multiplier)

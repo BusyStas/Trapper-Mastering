@@ -45,6 +45,8 @@ Game Play:
     - Follow the technical requirements and ensure compatibility with the game engine.
     - Prioritize player engagement and retention in all new features and updates.
     - Collaborate with the development team to implement AI-driven features and improvements.
+    - Create _setup.bat that will install all necessary packages and dependencies
+    - Create _run.bat that will start 2D GUI game
 
 # Mile Stones
     - Initial game concept and design document completed.
@@ -61,6 +63,8 @@ Game Play:
     - Create a yaml file with probabilities of capturing creatures based on trap type, creature behavior, and environmental factors.
 
 # Technical Requirements
+    - This should be 2D game with a graphical interface
+
     - The game will be developed using a cross-platform game engine (e.g., Unity or Unreal Engine).
     - The game will support both single-player and multiplayer modes.
     - The game will be optimized for performance on a variety of devices, including mobile and desktop.

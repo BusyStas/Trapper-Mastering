@@ -1,0 +1,6 @@
+
+  click "Sync Fork"
+  click "Update Branch"
+  open in Visual Studio Code 
+  click on "Source Control" (the picture in the left vertical bar)
+  click on "Pull" - little icon "arrow down" in the middle of the Left pane 
