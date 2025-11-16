@@ -18,6 +18,8 @@ if not exist ".venv\Scripts\python.exe" (
     echo Using existing virtual environment at .venv
 )
 
+pause
+
 echo Upgrading pip, setuptools, wheel in venv...
 .venv\Scripts\python.exe -m pip install --upgrade pip setuptools wheel
 
@@ -44,4 +46,6 @@ if errorlevel 1 (
     echo Setup completed successfully.
 )
 ENDLOCAL
+
+
 pause

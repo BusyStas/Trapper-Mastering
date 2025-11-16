@@ -1,12 +1,34 @@
+echo Starting Trapper-Mastering GUI...
 @echo off
 REM _run.bat - Start the Trapper-Mastering 2D GUI using the repository venv if available
-SETLOCAL
+REM This script prints output and waits at the end so the window doesn't immediately close.
+
 echo Starting Trapper-Mastering GUI...
+set EXITCODE=0
+
 if exist ".venv\Scripts\python.exe" (
     echo Using .venv\Scripts\python.exe
-    .venv\Scripts\python.exe gui_app.py %*
+    call .venv\Scripts\python.exe gui_app.py %*
+    set EXITCODE=%ERRORLEVEL%
 ) else (
     echo Virtual environment not found. Attempting to run with system python.
-    python gui_app.py %*
+    call python gui_app.py %*
+    set EXITCODE=%ERRORLEVEL%
 )
-ENDLOCAL
+
+echo.
+if %EXITCODE% NEQ 0 (
+    echo Program exited with code %EXITCODE%.
+    echo If this is a ModuleNotFoundError for pygame, run _setup.bat to install dependencies (or use Python 3.11).
+) else (
+    echo Program exited normally (exit code 0).
+)
+
+pause
+
+echo.
+echo Press any key to close this window...
+pause >nul
+exit /b %EXITCODE%
+
+pause
