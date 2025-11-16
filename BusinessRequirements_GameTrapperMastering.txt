@@ -45,6 +45,8 @@ Game Play:
     - Follow the technical requirements and ensure compatibility with the game engine.
     - Prioritize player engagement and retention in all new features and updates.
     - Collaborate with the development team to implement AI-driven features and improvements.
+    - Create _setup.bat that will install all necessary packages and dependencies
+    - Create _run.bat that will start 2D GUI game
 
 # Mile Stones
     - Initial game concept and design document completed.
