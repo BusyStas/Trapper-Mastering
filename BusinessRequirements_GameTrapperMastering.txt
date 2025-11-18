@@ -68,6 +68,7 @@ Game Play:
     - Create a folder /assets/traps/ with sprites and animations for each trap type and upgrade level.  
     - Create a folder /assets/berries/ with sprites and animations for each berry type.
     - Create a folder /assets/environments/ with background images and environmental effects for each location.
+        - Background should be arranged using graphics 1020x1020 and linked together (files bg_r1_c1, bg_r1_c2, etc.)
     - Graphical assets should be in PNG format with transparent backgrounds where applicable.
 
 # Technical Requirements
